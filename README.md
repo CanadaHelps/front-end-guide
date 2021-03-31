@@ -6,6 +6,7 @@ This is a development convention guide for building front-end applications and l
 1. Get access to our private repository by adding your team or github account to our organization.
 2. Choose one of the app_template_* folders as base for building your application [React Guidelines](react-guidelines/) can help you decide. Typically we should be using the hooks template.
 3. Go through the template and replace placeholders and uncomment sections as needed. These app_templates will not run automatically, you will need to do some work to get them up and running.
+4. Familiarize yourself with our [JavaScript and TypeScript Conventions](js-ts-conventions) and make sure to get [prettier](https://prettier.io/) up and running with your IDE.
 
 ## Installing Packages
 
@@ -13,7 +14,7 @@ Run `npm i`
 
 ## Testing
 
-Run `npm test` or `npm run watch:test` to start a jest test watcher. The [Testing Guide][tests-guidelines] has more details.
+Run `npm test` or `npm run watch:test` to start a jest test watcher. The [Testing Guide](tests-guidelines) has more details.
 
 ## Building
 
