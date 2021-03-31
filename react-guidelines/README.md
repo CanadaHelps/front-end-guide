@@ -13,18 +13,23 @@ Our path forward will focus more on using hooks and context vs. Redux. Redux is 
 (https://redux.js.org/faq/general)
 
 ## Functional Components
-Don't use classes, don't use `createClass`. If you need state or lifecycle methods or side-effects, [use hooks](https://reactjs.org/docs/hooks-intro.html).
+We use functional components for 99% of the React components we build. Please: don't use classes, don't use `createClass`. If you need state or lifecycle methods or side-effects, [use hooks](https://reactjs.org/docs/hooks-intro.html).
 
-```jsx
+```tsx
 import React from 'react';
 
-export const MyComponent = {id, charities} => {
+export type SomeComponentProps = {
+  id: number,
+  charities: CharityModel[]
+};
+
+export const SomeComponent = React.FC<SomeComponentProps> = ({id, charities}) => {
   return (
     <div>
       <p>My Component ID: {id}</p>
       <ul>
         {
-          charities.map( (charity, index) => {
+          charities.map( (charity: CharityModel, index: number) => {
             return (
               <li key={index}>
                 {charity.name}
