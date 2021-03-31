@@ -35,7 +35,7 @@ You should have most of these already in your `package.json`. Babel packages typ
 
 #### package.json script
 
-```json
+```javascript
 {
     //...
     "scripts": {
