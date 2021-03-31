@@ -1,85 +1,111 @@
-# React App Template (Redux-based)
 
-## Prettier
+# Breaking Down the App Template SRC Folder Structure
 
-We use prettier to maintain code formatting and conventions. [JS Conventions]("js-ts-conventions/README.md")
+This is the folder structure that we will use for building CHOUI applications.
 
+```javascript
+src
+```
+The application source root.
 
-## Storybook
+```javascript
+˪ api
+  ˪ <apiClientName>.ts
+  ˪ ...
 
-We use Storybook when we want to work without a backend or when we want to show UI components in action isolated from a larger application.
+```
+This folder contains API endpoint handlers, object mappers and necessary types to support them. If an API client is developed using swagger or is generalized enough to be used by multiple apps it belongs in its own CHOUI npm package and should not be included here.
 
-### Packages
+```javascript
+˪ components
+  ˪ <ComponentName>.tsx
+  ˪ ...
 
-```shell
-npm install --save-dev @storybook/react @storybook/addon-center
-ed @storybook/addon-cssresources @storybook/addon-info @storybook/addon-knobs react-docgen-typescript-loader
+```
+The components folder is for storing React JSX components and any closely coupled supporting code.
+
+```javascript
+  ˪ types
+    ˪ <NameOfType>.ts
+     ...
 ```
 
-#### Dependencies
+Use the types folder for types shared between the various components that are _component specific_ (i.e. props/function arguments). If a type doesn't need to be shared define it in the file that uses it.
 
-You should have most of these already in your `package.json`. Babel packages typically come from the `CHOUI/canadahelps/package.json` file
-
-* react
-* react-dom
-* @babel/core
-* babel-loader
-
-#### What they do
-
-| Package                                                                                                  | Description                                                                                                          |
-|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| [@storybook/react](https://github.com/storybooks/storybook/tree/master)                                  | The core package                                                                                                     |
-| [@storybook/addon-centered ](https://github.com/storybooks/storybook/tree/master/addons/centered )       | A decorator to center your stories                                                                                   |
-| [@storybook/addon-cssresources](https://github.com/storybooks/storybook/tree/master/addons/cssresources) | Allows you to feed in some css like material icons or fontawesome                                                    |
-| [@storybook/addon-info ](https://github.com/storybooks/storybook/tree/master/addons/info )               | Adds a PropType explorer                                                                                             |
-| react-docgen-typescript-loader                                                                           | Used in combination with `@storybook/addon-info` to parse docgen style comments of our typescript props and dispatch |
-| [@storybook/addon-knobs](https://github.com/storybooks/storybook/tree/master/addons/knobs)               | Exposes some variables to the storybook ui.                                                                          |
-
-### Configuration
-
-#### package.json script
-
-```json
-{
-    ...
-    "scripts": {
-        ...
-        "storybook": "start-storybook -p 9001 -c .storybook"
-        ...
-    },
-    ...
-}
+```javascript
+  ˪ hooks
+     ˪ <HookName>.ts
+     ...
 ```
 
-This will start your story book on port `9001` taking the configuration from `.storybook` folder
+Reusable hooks that can be shared between components that do not deal in global state. If the hook is specific to a given component - define it locally within that component.
 
-#### .storybook folder
+```javascript
+  ˪ shared
+    ˪ <ComponentName>.tsx
+    ...
+```
 
-##### config.js
+Components shared across this app, but not abstract enough to be pulled out of the application entirely and added to `shared_libs` or another library inside of `shared_libs`.
+```javascript
 
-Set up of the storybook. Configure addons for all stories.
+  ˪ <organizational_folder>
+    ˪ <ComponentName>.tsx
+    ...
+```
+Too many files in this directory? Make logical sub-folders to group them.
 
-Points to the stories files to load. Currently anything ending with `*.stories.tsx` will be loaded as a story.
+```javascript
+˪ state
+```
+The directory is intended to house code related to the global state of the application. It is intentionally kept separate from the rest of the application because the elements within are by their nature reusable and strive to be agnostic of specific component concerns.
 
-##### webpack.config.js
+```javascript
+   ˪ <duck|state_node_name>
+```
 
-Configures webpack for Create React App (what story book uses to deploy itself)
+Divide this directory up based on the major nodes of the state tree. If the state for the application isn't that complex this directory may not be necessary.
 
-We set babel loader's `rootMode: "upward"` so it looks for babel in `/canadahelps/node_modules`
+ ```javascript
+    ˪ actions
+```
+For action creators.
 
-Typescript to be handled by `awesome-typescript-loader` with `react-docgen-typescript-loader` to do the PropTypes exploration
+```javascript
+      ˪ helpers
+```
+I am finding more and more that we need specific state helpers that we can use to glue bits of code together.
 
-Any aliases can also be set here
+```javascript
+      ˪ reducers
+```
+For reducers
+```javascript
+      ˪ types
+```
+Types specific to this specific duck/state node
 
-##### addons.js
+```javascript
+   ˪ shared
+   ...
+```
+The same thing as a specific duck/state node but for code that is shared between ducks/nodes. If it can be abstracted out of the application it should go into `shared_libs`.
 
-This registers installed addons into the storybook panel
+```
+˪ messages
+```
 
-### Writing stories
+The application's localization messages.
 
-Any file ending with `.stories.tsx` will be loaded as a story.
+```
+˪ style
+```
 
-You can group your stories in `__stories__` folder
+scss for the application
 
-More info here: https://storybook.js.org/basics/writing-stories/
+
+```
+˪ utils
+```
+
+A catch-all, global folder for useful utilities that don't really belong anywhere else. The contents of this folder can often times be moved outside of the application and into `shared_libs` if a given utility is general enough.
