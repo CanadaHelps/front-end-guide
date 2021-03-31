@@ -31,10 +31,10 @@ The components folder is for storing React JSX components and any closely couple
   ˪ ...
 
 ```
-The hooks folder is for storing reusable hooks use across components. Anything highly specific should remain in the file with the component that utilizes it.
+The hooks folder is for storing reusable hooks used across components. Anything highly specific should remain in the file with the component that utilizes it.
 
 ```javascript
-˪ provider
+˪ providers
   ˪ <providerName>.tsx
   ˪ ...
 
