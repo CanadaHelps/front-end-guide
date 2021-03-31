@@ -1,80 +1,69 @@
-# React app template
 
-## Storybook
+# Breaking Down the App Template SRC Folder Structure
 
-Adding story book to your app
-
-### Packages
-
-```shell
-npm install --save-dev @storybook/react @storybook/addon-center
-ed @storybook/addon-cssresources @storybook/addon-info @storybook/addon-knobs react-docgen-typescript-loader
-```
-
-#### Dependencies
-
-You should have most of these already in your `package.json`. Babel packages typically come from the `CHOUI/canadahelps/package.json` file
-
-* react
-* react-dom
-* @babel/core
-* babel-loader
-
-#### What they do
-
-| Package                                                                                                  | Description                                                                                                          |
-|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| [@storybook/react](https://github.com/storybooks/storybook/tree/master)                                  | The core package                                                                                                     |
-| [@storybook/addon-centered ](https://github.com/storybooks/storybook/tree/master/addons/centered )       | A decorator to center your stories                                                                                   |
-| [@storybook/addon-cssresources](https://github.com/storybooks/storybook/tree/master/addons/cssresources) | Allows you to feed in some css like material icons or fontawesome                                                    |
-| [@storybook/addon-info ](https://github.com/storybooks/storybook/tree/master/addons/info )               | Adds a PropType explorer                                                                                             |
-| react-docgen-typescript-loader                                                                           | Used in combination with `@storybook/addon-info` to parse docgen style comments of our typescript props and dispatch |
-| [@storybook/addon-knobs](https://github.com/storybooks/storybook/tree/master/addons/knobs)               | Exposes some variables to the storybook ui.                                                                          |
-
-### Configuration
-
-#### package.json script
+This is the folder structure that we will use for building CHOUI applications.
 
 ```javascript
-{
-    //...
-    "scripts": {
-        //...
-        "storybook": "start-storybook -p 9001 -c .storybook"
-        //...
-    },
-    //...
-}
+src
+```
+The application source root.
+
+```javascript
+˪ api
+  ˪ <apiClientName>.ts
+  ˪ ...
+
+```
+This folder contains API endpoint handlers, object mappers and necessary types to support them. If an API client is developed using swagger or is generalized enough to be used by multiple apps it belongs in its own CHOUI npm package and should not be included here.
+
+
+```javascript
+˪ components
+  ˪ <ComponentName>.tsx
+  ˪ ...
+
+```
+The components folder is for storing React JSX components and any closely coupled supporting code (types, helpers, higher order functions, etc.).
+
+```javascript
+˪ hooks
+  ˪ <hookName>.ts
+  ˪ ...
+
+```
+The hooks folder is for storing reusable hooks use across components. Anything highly specific should remain in the file with the component that utilizes it.
+
+```javascript
+˪ provider
+  ˪ <providerName>.tsx
+  ˪ ...
+
+```
+Context providers for those applications utilizing context.
+
+```javascript
+˪ reducers
+  ˪ index.ts
+  ˪ ...
+
+```
+Reducers for applications that utilize them (i.e. from the userReducer hook)
+
+```
+˪ messages
 ```
 
-This will start your story book on port `9001` taking the configuration from `.storybook` folder
+The application's localization messages.
 
-#### .storybook folder
+```
+˪ style
+```
 
-##### config.js
+scss for the application
 
-Set up of the storybook. Configure addons for all stories.
 
-Points to the stories files to load. Currently anything ending with `*.stories.tsx` will be loaded as a story.
+```
+˪ utils
+```
 
-##### webpack.config.js
-
-Configures webpack for Create React App (what story book uses to deploy itself)
-
-We set babel loader's `rootMode: "upward"` so it looks for babel in `/canadahelps/node_modules`
-
-Typescript to be handled by `awesome-typescript-loader` with `react-docgen-typescript-loader` to do the PropTypes exploration
-
-Any aliases can also be set here
-
-##### addons.js
-
-This registers installed addons into the storybook panel
-
-### Writing stories
-
-Any file ending with `.stories.tsx` will be loaded as a story.
-
-You can group your stories in `__stories__` folder
-
-More info here: https://storybook.js.org/basics/writing-stories/
+A catch-all, global folder for useful utilities that don't really belong anywhere else. The contents of this folder can often times be moved outside of the application and into `shared_libs` if a given utility is general enough.
