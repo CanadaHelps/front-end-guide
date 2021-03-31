@@ -18,7 +18,7 @@ Don't use classes, don't use `createClass`. If you need state or lifecycle metho
 ```jsx
 import React from 'react';
 
-export const MyComponent = {id: number, charities} => {
+export const MyComponent = {id, charities} => {
   return (
     <div>
       <p>My Component ID: {id}</p>
