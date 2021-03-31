@@ -1,7 +1,7 @@
 # Javascript and TypeScript Conventions
 This document contains all of the Javascript conventions we want to follow as a team in this project.
 
-# Go and Get Prettier Setup for your IDE
+# Go and Get Prettier, Setup for your IDE
 
 We use [prettier](https://prettier.io/). We use it combined with typescript-eslint and pretty much use what comes out of the box. We do add the one-true-brace-style, force lf file endings and are more generous with our line lengths. Getting this up and running will cover a lot of coding conventions for you and avoid us having to talk about it in our code reviews.
 
