@@ -14,7 +14,7 @@
 
 ## Structuring a Test
 
-We use Jest to run and write our tests. Jest uses Jasmine under the hood.
+We use Jest to run and write our tests. Jest uses Jasmine under the hood. Create a `__tests__` directory in a folder close to the code you are writing the test for. If you are creating mocks it is usually a good idea to add `__mocks__` directory in the root of your application so you can share the mocks between tests.
 
 A typical test should look like this
 
