@@ -10,7 +10,7 @@ The application source root.
 
 ```javascript
 ˪ api
-  ˪ <apiClientName>.ts
+  ˪ <api_client_name>.ts
   ˪ ...
 
 ```
@@ -19,7 +19,7 @@ This folder contains API endpoint handlers, object mappers and necessary types t
 
 ```javascript
 ˪ components
-  ˪ <ComponentName>.tsx
+  ˪ <component_name>.tsx
   ˪ ...
 
 ```
@@ -27,7 +27,7 @@ The components folder is for storing React JSX components and any closely couple
 
 ```javascript
 ˪ hooks
-  ˪ <hookName>.ts
+  ˪ <hook_name>.ts
   ˪ ...
 
 ```
@@ -35,7 +35,7 @@ The hooks folder is for storing reusable hooks used across components. Anything 
 
 ```javascript
 ˪ providers
-  ˪ <providerName>.tsx
+  ˪ <provider_name>.tsx
   ˪ ...
 
 ```

@@ -10,7 +10,7 @@ The application source root.
 
 ```javascript
 ˪ api
-  ˪ <apiClientName>.ts
+  ˪ <api_client_name>.ts
   ˪ ...
 
 ```
@@ -18,7 +18,7 @@ This folder contains API endpoint handlers, object mappers and necessary types t
 
 ```javascript
 ˪ components
-  ˪ <ComponentName>.tsx
+  ˪ <component_name>.tsx
   ˪ ...
 
 ```
@@ -26,7 +26,7 @@ The components folder is for storing React JSX components and any closely couple
 
 ```javascript
   ˪ types
-    ˪ <NameOfType>.ts
+    ˪ <name_of_type>.ts
      ...
 ```
 
@@ -34,7 +34,7 @@ Use the types folder for types shared between the various components that are _c
 
 ```javascript
   ˪ hooks
-     ˪ <HookName>.ts
+     ˪ <hook_name>.ts
      ...
 ```
 
@@ -42,7 +42,7 @@ Reusable hooks that can be shared between components that do not deal in global 
 
 ```javascript
   ˪ shared
-    ˪ <ComponentName>.tsx
+    ˪ <component_name>.tsx
     ...
 ```
 
@@ -50,7 +50,7 @@ Components shared across this app, but not abstract enough to be pulled out of t
 ```javascript
 
   ˪ <organizational_folder>
-    ˪ <ComponentName>.tsx
+    ˪ <component_name>.tsx
     ...
 ```
 Too many files in this directory? Make logical sub-folders to group them.
