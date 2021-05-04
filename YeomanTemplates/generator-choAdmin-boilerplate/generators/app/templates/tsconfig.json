@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "moduleResolution": "node",
+    "outDir": "./lib/",
+    "rootDir": "./src",
+    "target": "es2019"
+  },
+  "exclude": ["node_modules"],
+  "include": ["./src/**/*"]
+}
