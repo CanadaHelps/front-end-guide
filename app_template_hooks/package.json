@@ -33,10 +33,10 @@
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
-    "@canadahelps/chui": "^1.14.2",
-    "@canadahelps/chutils": "^1.15.0",
-    "@canadahelps/ch-datatable-toolkit": "^2.3.0",
-    "@canadahelps/localization": "^1.1.0",
+    "@canadahelps/chui": "latest",
+    "@canadahelps/chutils": "latest",
+    "@canadahelps/ch-datatable-toolkit": "latest",
+    "@canadahelps/localization": "latest",
     "cnbuilder": "^2.6.0",
     "css-loader": "1.0.0",
     "date-fns": "^2.19.1",
@@ -49,7 +49,7 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "@canadahelps/ui-common-config": "^2.1.2",
+    "@canadahelps/ui-common-config": "latest",
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
