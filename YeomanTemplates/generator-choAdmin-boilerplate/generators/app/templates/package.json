@@ -4,8 +4,6 @@
   "description": "<description>",
   "main": "src/index<.ts|.js|.tsx>",
   "scripts": {
-    "prepare": "run-s clean transpile",
-    "clean": "rimraf lib",
     "copy-style": "cpx \"src/**/*.{css,scss}\" lib",
     "transpile": "run-p transpile:babel transpile:declarations copy-style",
     "transpile:babel": "babel src --out-dir lib --extensions \".ts,.tsx,.js,.jsx\"",
