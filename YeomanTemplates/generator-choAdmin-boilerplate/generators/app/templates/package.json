@@ -13,8 +13,6 @@
     "build-storybook": "build-storybook",
     "build:dev": "webpack --env.mode development",
     "build": "webpack --env.mode production --display-error-details",
-    "deploy:dev": "npm run build:dev",
-    "deploy": "npm run build",
     "lint": "eslint \"src/**\" --fix",
     "lint:ci": "eslint \"src/**\"",
     "storybook": "start-storybook -s ../../dist -p 9009",
