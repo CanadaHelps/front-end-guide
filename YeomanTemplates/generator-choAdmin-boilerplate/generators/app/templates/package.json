@@ -23,7 +23,9 @@
     "tsc:ci": "tsc --noEmit",
     
     "watch:test": "cross-env NODE_ICU_DATA=./node_modules/full-icu jest --watch",
-    "watch": "webpack --env.mode development --watch"
+    "watch:tsc": "tsc --noEmit --watch",
+    "watch": "webpack --env.mode development --watch",
+    "ci:all": "run-p test:ci lint:ci tsc:ci"
   },
   "repository": {
     "type": "git",
