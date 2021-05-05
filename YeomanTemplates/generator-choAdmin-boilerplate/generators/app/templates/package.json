@@ -16,7 +16,6 @@
     "test:snapshots": "cross-env NODE_ICU_DATA=./node_modules/full-icu jest --updateSnapshot",
     "test": "cross-env DEBUG_PRINT_LIMIT=30000 NODE_ICU_DATA=./node_modules/full-icu jest",
     "tsc:ci": "tsc --noEmit",
-    
     "watch:test": "cross-env NODE_ICU_DATA=./node_modules/full-icu jest --watch",
     "watch:tsc": "tsc --noEmit --watch",
     "watch": "webpack --env.mode development --watch",
