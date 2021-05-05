@@ -1,11 +1,21 @@
 {
+  "extends": "./node_modules/@canadahelps/ui-common-config/build/tsconfig.json",
   "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "./src",
     "declaration": true,
-    "moduleResolution": "node",
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["dom", "ES2019"],
+    "module": "commonjs",
+    "noImplicitAny": false,
     "outDir": "./lib/",
     "rootDir": "./src",
-    "target": "es2019"
+    "sourceMap": true,
+    "target": "es2019",
+    "types": ["jest", "core-js", "node"]
   },
-  "exclude": ["node_modules"],
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", ],
+  "exclude": ["node_modules"]
 }

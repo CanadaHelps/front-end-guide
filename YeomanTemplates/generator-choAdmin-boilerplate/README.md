@@ -7,8 +7,8 @@
 First, install [Yeoman](http://yeoman.io) and generator-chli using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-npm install -g yo
-npm install -g @canadahelps/generator-cho-admin-app
+npm install  yo
+npm install  @canadahelps/generator-cho-admin-app
 ```
 (You may need to install the above packages non-global and run them from an app directory instead)
 
@@ -16,7 +16,7 @@ npm install -g @canadahelps/generator-cho-admin-app
 Then generate new api client:
 
 ```bash
-yo @canadahelps/cho-admin-app https://canadahelps.local/site/api/swagger/CharityRegistration/swagger.json
+npx yo @canadahelps/cho-admin-app https://canadahelps.local/site/api/swagger/CharityRegistration/swagger.json
 ```
 
 If you get certificate errors with generation because the generator can't reach the URL copy the contents of `swagger.json` to `/src/swagger.json` in the app you just generated. Then run npm run generate.

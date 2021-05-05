@@ -33,29 +33,23 @@
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
-    "@canadahelps/chui": "^1.14.2",
-    "@canadahelps/chutils": "^1.15.0",
-    "@canadahelps/ch-datatable-toolkit": "^2.3.0",
-    "@canadahelps/localization": "^1.1.0",
-    "@reduxjs/toolkit": "^1.5.1",
+    "@canadahelps/chui": "latest",
+    "@canadahelps/chutils": "latest",
+    "@canadahelps/ch-datatable-toolkit": "latest",
+    "@canadahelps/localization": "latest",
     "cnbuilder": "^2.6.0",
     "css-loader": "1.0.0",
-    "date-fns": "^2.19.0",
+    "date-fns": "^2.19.1",
     "date-fns-tz": "^1.1.13",
     "history": "^5.0.0",
     "isomorphic-fetch": "^3.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-helmet": "^6.1.0",
-    "react-redux": "^7.2.3",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "@canadahelps/ui-common-config": "^2.1.2",
+    "@canadahelps/ui-common-config": "latest",
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
@@ -73,7 +67,6 @@
     "full-icu": "^1.3.1",
     "npm-run-all": "^4.1.5",
     "react-axe": "^3.5.3",
-    "react-select-event": "^5.3.0",
-    "redux-mock-store": "^1.5.4"
+    "react-select-event": "^5.3.0"
   }
 }

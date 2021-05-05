@@ -1,0 +1,56 @@
+# use shell glob syntax (can use regexp if we need to)
+syntax: glob
+
+storybook-static/**
+storybook-static/sb_dll/**
+
+# development artifacts
+*.pyc
+*.swp
+.idea/
+python.log
+tags
+tmtags
+node_modules
+npm-debug.log
+ui_develop.iml
+local_settings.json
+.pydevproject
+canadahelps/js/templates.js
+bin/
+jest/
+selenium-debug.log
+.vscode/
+test_reports/junit.xml
+test-report.xml
+examples/
+# Mac OS X artifacts
+
+/nbproject/private/
+nbproject/project.properties
+nbproject/project.xml
+.project
+/.pydevproject
+
+# Build artifacts
+**/lib/**
+**/temp/**
+**/dist/**
+
+.DS_Store
+.project
+.pydevproject
+nbproject/private/private.properties
+nbproject/private/private.xml
+nbproject/project.properties
+nbproject/project.xml
+
+out/
+CHOUI.iml
+eslint-report.html
+coverage/
+test_reports/
+junit.xml
+test_report.xml
+package-lock.json
+refresh_coverage.sh

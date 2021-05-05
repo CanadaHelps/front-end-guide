@@ -2,6 +2,7 @@
 const Generator = require("yeoman-generator");
 const mkdirp = require("mkdirp");
 const path = require("path");
+const { mkdir } = require("fs");
 
 module.exports = class extends Generator {
   // eslint-disable-next-line no-useless-constructor
@@ -10,37 +11,37 @@ module.exports = class extends Generator {
   }
 
   prompting() {
-    const defaultFolderName = `defaultFolder`;
-    const defaultPackageName = `defaultPackage`;
+    const defaultFolderName = `default_folder`;
+    const defaultPackageName = `default_package`;
     const defaultApplicationName = "choadmin-app";
     const prompts = [
       {
         type: "input",
         name: "folderName",
         message: `Folder name`,
-        default: defaultFolderName
+        default: defaultFolderName,
       },
       {
         type: "input",
         name: "packageName",
         message: `NPM package name`,
-        default: defaultPackageName
+        default: defaultPackageName,
       },
       {
         type: "input",
         name: "applicationName",
         message: `Client name`,
-        default: defaultApplicationName
+        default: defaultApplicationName,
       },
       {
         type: "input",
         name: "version",
         message: `Version`,
-        default: "1.0.0"
-      }
+        default: "1.0.0",
+      },
     ];
 
-    return this.prompt(prompts).then(props => {
+    return this.prompt(prompts).then((props) => {
       this.props = props;
     });
   }
@@ -78,10 +79,37 @@ module.exports = class extends Generator {
       this.destinationPath("package.json"),
       {
         packageName: this.props.packageName,
-        apiVersion: this.props.version,
-        applicationName: this.props.applicationName,
+        apiVersion: this.props.apiVersion,
         folderName: this.props.folderName
       }
+    );
+    this.fs.copyTpl(
+      this.templatePath("babel.config.js"),
+      this.destinationPath("babel.config.js")
+    );
+    this.fs.copyTpl(
+      this.templatePath("jest.config.js"),
+      this.destinationPath("jest.config.js")
+    );
+    this.fs.copyTpl(
+      this.templatePath("jest.setup.js"),
+      this.destinationPath("jest.setup.js")
+    );
+    this.fs.copyTpl(
+      this.templatePath("package_version_explicitify.js"),
+      this.destinationPath("package_version_explicitify.js")
+    );
+    this.fs.copyTpl(
+      this.templatePath("webpack.config.js"),
+      this.destinationPath("webpack.config.js")
+    );
+    this.fs.copyTpl(
+      this.templatePath(".gitignore"),
+      this.destinationPath(".gitignore")
+    );
+    this.fs.copyTpl(
+      this.templatePath(".eslintrc.js"),
+      this.destinationPath(".eslintrc.js")
     );
 
     mkdirp("src");
@@ -94,6 +122,17 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath("src/index.tsx"),
       this.destinationPath("src/index.tsx")
+    );
+
+    mkdirp("src/components");
+    mkdirp("src/styles");
+    this.fs.copyTpl(
+      this.templatePath("src/index.tsx"),
+      this.destinationPath("src/components/index.tsx")
+    );
+    this.fs.copyTpl(
+      this.templatePath("src/index.tsx"),
+      this.destinationPath("src/styles/index.tsx")
     );
   }
 
