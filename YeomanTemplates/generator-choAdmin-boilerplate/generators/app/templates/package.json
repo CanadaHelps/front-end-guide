@@ -4,7 +4,6 @@
   "description": "<description>",
   "main": "src/index<.ts|.js|.tsx>",
   "scripts": {
-    "prepublishOnly": "npm test",
     "prepare": "run-s clean transpile",
     "clean": "rimraf lib",
     "copy-style": "cpx \"src/**/*.{css,scss}\" lib",
