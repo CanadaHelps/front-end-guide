@@ -24,7 +24,7 @@ module.exports = ({ mode, storybook }) => {
     {
       stats: "errors-only",
       entry: {
-        //<app>: "./src/<path_to_app>",
+        <%= folderName %>: "./src/index.tsx",
         //<another_app>: "./src/<path_to_app>",
       },
       resolve: {
