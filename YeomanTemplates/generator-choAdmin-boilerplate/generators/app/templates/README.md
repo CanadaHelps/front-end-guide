@@ -1,23 +1,46 @@
-Generated typescript api client by NSwag's openApiToTypeScriptClient (using fetch)
 
-## Usage
+# <App Name>
 
-## Generating a new version
+## Getting Started
 
-**NOTE**: package version is API version
+### Setup
 
-1. Download the OpenAPI spec and save it to `./src/swagger.json`
-2. Bump the package.json version number to match OpenAPI spec
-3. `npm publish`
+Run `npm install`
 
-### Under the hood
+#### One time build
 
-We use [NSwag's npm cli](https://github.com/RicoSuter/NSwag/wiki/CommandLine) to generate a typescript client using `config.nswag`. This outputs a single typescript file.
+```bash
+npm run build:dev
+```
 
-Then Babel transpiles it into the lib folder, along with type definitions using `tsc`
+#### One time build (prod)
 
-## Philosophy
+```bash
+npm run build
+```
 
-This client was generated using OpenAPI 3.0 spec produced by SiteAPI using Swashbuckle (swagger).
+#### Active development
 
-The goal is to reduce the amount of manual code mapping written to communicate between JS(React) and C#(API)
+```bash
+npm run watch
+```
+
+## NPM Scripts
+
+| script          | task                                                                      |
+| --------------- | ------------------------------------------------------------------------- |
+| `build-storybook`| builds storybook for mocking an interface                                |
+| `build:dev`     | builds development artifacts one time                                     |
+| `lint`          | runs eslint and fixes issues                                              |
+| `lint:ci`       | runs eslint in a ci context and does not fix issues                       |
+| `build`         | builds production artifacts                                               |
+| `ci:all`        | runs all CI tasks, used by github actions                                 |
+| `test:ci`       | runs test suite once with --ci --coverage flags                           |
+| `test:coverage` | runs test suite once with --coverage flag                                 |
+| `test:snapshots`| runs test suite once with --updateSnapshots flag                          |
+| `test`          | runs test suite once                                                      |
+| `tsc:ci`        | runs typechecking once                                                    |
+| `watch`         | watches src for changes and rebuilds development artifacts                |
+| `watch:test`    | watches src for changes and re-runs tests as necessary                    |
+| `watch:tsc`     | starts a typechecking watcher                                             |
+
