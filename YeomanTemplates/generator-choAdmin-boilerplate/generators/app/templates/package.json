@@ -24,7 +24,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/CanadaHelps/CHOUI.git",
-    "directory": "canadahelps/choadmin_apps/<%= folderName %>"
+    "directory": "canadahelps/<%= folderName %>"
   },
   "author": "CanadaHelps",
   "private": true,
